@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>ブロック設定</title><link rel="stylesheet" href="style.css"></head>
+<body><main>
+  <header><p class="eyebrow">BLOCK DOPAMIN CONTENTS</p><h1>集中する時間をつくる</h1><p>見ないサイトと時間帯を決めて、あなたのペースを守りましょう。</p></header>
+  <section><h2>スケジュールを追加</h2>
+    <form id="rule-form">
+      <label for="domains">ブロックするサイト（1行に1つ）</label>
+      <textarea id="domains" rows="4" placeholder="youtube.com&#10;x.com" required></textarea>
+      <p class="hint">URLも入力できます。パスは無視され、そのサイト全体とサブドメインが対象になります。</p>
+      <fieldset><legend>開始する曜日</legend><div id="days" class="days"></div></fieldset>
+      <div class="times"><label>開始<input id="start" type="time" value="09:00" required></label><span>〜</span><label>終了<input id="end" type="time" value="18:00" required></label></div>
+      <p class="hint">端末の現地時刻で動作します。終了が開始より早い場合は翌日まで、同じ場合は選択曜日の終日です。</p>
+      <button type="submit">スケジュールを追加</button>
+    </form>
+  </section>
+  <p id="status" role="status" aria-live="polite"></p>
+  <section><h2>登録済みスケジュール</h2><div id="rules"></div></section>
+  <footer>設定はこのブラウザー内だけに保存されます。開始時には、すでに開いている対象タブもブロックします。拡張の無効化・削除による解除は防げません。</footer>
+</main><script src="rules.js"></script><script src="options.js"></script></body></html>
